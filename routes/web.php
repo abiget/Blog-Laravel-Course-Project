@@ -1,8 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +16,10 @@ use App\Models\Post;
 
 Route::get('/', function () {
     //Get all posts and pass them to a view called 'posts'
+    $posts = Post::all();
+
     return view('posts', [
-        'posts' => Post::all()
+        'posts' => $posts
     ]);
 });
 
