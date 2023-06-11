@@ -14,7 +14,16 @@
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
         <!--  Category -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
-            <select class="flex-1 appearance-none bg-transparent py-2 pl-3 pr-9 text-sm font-semibold">
+            <div x-data="{show:false}">
+                <button @click="show= ! show" class="py-2 pl-3 pr-9 text-sm font-semibold w-32 text-left">Categories</button>
+
+                <div x-show="show" class="py-2 absolute bg-gray-100 mt-2 rounded-xl w-full z-50">
+                    <a href="" class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 focus:bg-gray-300 hover:text-white focus:text-white">One</a>
+                    <a href="" class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 focus:bg-gray-300 hover:text-white focus:text-white">Two</a>
+                    <a href="" class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 focus:bg-gray-300 hover:text-white focus:text-white">Three</a>
+                </div>
+            </div>
+            {{-- <select class="flex-1 appearance-none bg-transparent py-2 pl-3 pr-9 text-sm font-semibold">
                 <option value="category" disabled selected>Category
                 </option>
                 @foreach ($categories as $category)
@@ -30,7 +39,7 @@
                     <path fill="#222"
                           d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z"></path>
                 </g>
-            </svg>
+            </svg> --}}
         </div>
 
         <!-- Other Filters -->
