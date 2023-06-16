@@ -21,7 +21,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         // Find a post by its id and pass it to a view called 'post'
-        return view('post.show',[
+        return view('posts.show',[
             'post'=> $post,
         ]);
     }
