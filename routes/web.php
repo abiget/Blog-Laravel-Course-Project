@@ -5,6 +5,25 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
+
+
+
+Route::get('ping', function (){
+    $mailchimp = new \MailchimpMarketing\ApiClient();
+
+    $mailchimp->setConfig([
+	    'apiKey' => config('services.mailchimp.key'),
+	    'server' => 'us17'
+    ]);
+
+    $response = $mailchimp->lists->addListMember('1df4fca1a9', [
+        'email_address' => 'getachewmengist21@gmail.com',
+        'status' => 'subscribed'
+    ]);
+    dd($response);
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
