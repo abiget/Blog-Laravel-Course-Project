@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Validation\Rule;
 use Symfony\Component\HttpFoundation\Response;
 
 class PostController extends Controller
@@ -24,10 +26,4 @@ class PostController extends Controller
             'post' => $post,
         ]);
     }
-    
-    public function create()
-    {
-        return view('posts.create');
-    }
-
 }

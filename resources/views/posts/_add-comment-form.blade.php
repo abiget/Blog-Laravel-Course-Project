@@ -13,7 +13,8 @@
 
             <div class="mt-6">
                 <textarea 
-                    name="body" class="w-full text-sm focus:outline-none focus:ring"
+                    name="body"
+                    class="w-full text-sm focus:outline-none focus:ring"
                     id="" cols="30" rows="5"
                     placeholder="Quick, thing of something to say!"
                     required></textarea>
@@ -24,7 +25,7 @@
             </div>
 
             <div class="flex justify-end border-t border-gray-200 mt-6 pt-6">
-                <x-submit-button>Post</x-submit-button>
+                <x-form.button>Post</x-form.button>
             </div>
         </form>
     </x-panel>
