@@ -34,6 +34,8 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
+Route::get('admin/posts/create', [PostController::class, 'create']);
+
 
 // Route::get('categories/{category:slug}', function (Category $category){
 //     //find posts associated with a category by its id and pass it to a view called 'posts'

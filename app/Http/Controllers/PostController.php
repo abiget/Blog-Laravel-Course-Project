@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Symfony\Component\HttpFoundation\Response;
 
 class PostController extends Controller
 {
+    //index, show, create, store, edit, update, destroy
     public function index()
     {
         return view('posts.index', [
@@ -22,6 +24,10 @@ class PostController extends Controller
             'post' => $post,
         ]);
     }
+    
+    public function create()
+    {
+        return view('posts.create');
+    }
 
-    //index, show, create, store, edit, update, destroy
 }
